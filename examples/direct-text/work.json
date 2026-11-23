@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "tool": "yasashii-ja",
+  "source": {
+    "kind": "text",
+    "path": null,
+    "label": "直接入力した文章"
+  },
+  "segments": [
+    {
+      "id": "s1",
+      "kind": "paragraph",
+      "original": "地域日本語教室のご案内"
+    },
+    {
+      "id": "s2",
+      "kind": "paragraph",
+      "original": "参加をご希望の方は、11月30日までにお申し込みください。"
+    },
+    {
+      "id": "s3",
+      "kind": "list-item",
+      "original": "参加費は無料です。"
+    },
+    {
+      "id": "s4",
+      "kind": "list-item",
+      "original": "教材費として500円が必要となる場合があります。"
+    },
+    {
+      "id": "s5",
+      "kind": "list-item",
+      "original": "申込書は提出しなくてもかまいません。"
+    },
+    {
+      "id": "s6",
+      "kind": "paragraph",
+      "original": "詳細は https://example.org/info をご覧ください。お問い合わせは info@example.org まで。"
+    }
+  ],
+  "integrity": "sha256-ababfd5c0567ae4420da74c924295353d8293571f13bd4371f612b34837177de",
+  "warnings": []
+}

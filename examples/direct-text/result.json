@@ -1,0 +1,30 @@
+{
+  "segments": [
+    { "id": "s1", "easy": "地域の 日本語教室の お知らせ" },
+    { "id": "s2", "easy": "教室に 参加したい 人は、11月30日までに 申し込んで ください。" },
+    { "id": "s3", "easy": "参加する お金は いりません。" },
+    { "id": "s4", "easy": "教科書などの お金が 500円 いる ことが あります。" },
+    { "id": "s5", "easy": "申し込みの 紙は 出さなくても いいです。" },
+    { "id": "s6", "easy": "くわしい ことは https://example.org/info を 見て ください。\n質問は info@example.org に メールで 送って ください。" }
+  ],
+  "warnings": [
+    {
+      "category": "modality",
+      "segmentId": "s4",
+      "message": "原文は「必要となる場合があります」です。いつ必要になるか（条件）が原文に書かれていないため、条件は足していません。読む人のために条件を書くか検討してください。",
+      "status": "needs-review"
+    },
+    {
+      "category": "url-contact",
+      "segmentId": "s6",
+      "message": "原文の「お問い合わせは〜まで」を「メールで 送って ください」と書き換えました。メール以外の問い合わせ方法がないか確認してください。",
+      "status": "needs-review"
+    },
+    {
+      "category": "condition",
+      "segmentId": "s2",
+      "message": "申し込みの方法（どこで・どうやって）が原文に書かれていません。足していないので、必要なら原文に追加してください。",
+      "status": "needs-review"
+    }
+  ]
+}

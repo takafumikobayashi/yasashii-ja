@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja" class="no-js" data-mode="easy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; script-src &#39;sha256-AVq96Cy7LEVReBeT+bhaSkWXmhUTP+/ITKQmT/bJvME=&#39;; style-src &#39;sha256-q3MaZdxpjmUrX1CL/s9bGIwd4hDV9XOF0ddoIcQsvIU=&#39;; img-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta name="generator" content="yasashii-ja">
+<title>やさしい日本語プレビュー（直接入力した文章）</title>
+<style>
+:root {
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #555555; --line: #d0d0d0;
+  --accent: #0b5cad; --accent-fg: #ffffff; --warn-bg: #fff4d6; --warn-line: #b37400; --note-bg: #eef4fb;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616; --fg: #ececec; --muted: #b5b5b5; --line: #444444;
+    --accent: #79b4ff; --accent-fg: #0b1a2a; --warn-bg: #3a2d0c; --warn-line: #e0a63a; --note-bg: #1d2a3a;
+  }
+}
+* { box-sizing: border-box; }
+html { font-size: 112.5%; }
+body {
+  margin: 0 auto; max-width: 46rem; padding: 1.5rem 1rem 3rem;
+  background: var(--bg); color: var(--fg);
+  font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  line-height: 1.9; letter-spacing: 0.02em;
+}
+h1 { font-size: 1.5rem; line-height: 1.4; margin: 0 0 0.5rem; }
+h2 { font-size: 1.25rem; line-height: 1.5; margin: 2rem 0 0.75rem; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 0.875rem; margin: 0 0 0.75rem; }
+.notice { background: var(--note-bg); border-left: 4px solid var(--accent); padding: 0.75rem 1rem; margin: 0; font-size: 0.9rem; }
+.toolbar {
+  position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+  background: var(--bg); padding: 0.75rem 0; margin: 1rem 0; border-bottom: 1px solid var(--line);
+}
+.toolbar-label { font-weight: bold; }
+.toolbar button {
+  font: inherit; font-size: 1rem; padding: 0.4rem 1rem; min-height: 44px; cursor: pointer;
+  border: 2px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent);
+}
+.toolbar button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); font-weight: bold; }
+.no-js .toolbar { display: none; }
+.seg { display: block; margin: 0 0 1.25rem; }
+h2.seg { margin-top: 1.75rem; }
+.seg-list { padding-left: 1.5rem; margin: 0 0 1.25rem; }
+li.seg { display: list-item; margin-bottom: 0.5rem; }
+.text { white-space: pre-line; }
+.v { display: block; }
+.v-label { display: none; }
+.no-js .v-label { display: inline; font-size: 0.8rem; color: var(--muted); font-weight: normal; }
+.no-js .v-original { color: var(--muted); }
+html:not(.no-js)[data-mode="easy"] .v-original { display: none; }
+html:not(.no-js)[data-mode="original"] .v-easy { display: none; }
+.has-warning { border-left: 4px solid var(--warn-line); padding-left: 0.75rem; }
+li.has-warning { padding-left: 0.5rem; }
+.badge {
+  display: inline-block; font-size: 0.8rem; line-height: 1.6; padding: 0 0.5rem; margin-top: 0.25rem;
+  border: 1px solid var(--warn-line); border-radius: 4px; background: var(--warn-bg); color: var(--fg); text-decoration: none;
+}
+.review, .about { border-top: 1px solid var(--line); margin-top: 2rem; }
+.warnings { padding-left: 1.5rem; }
+.warning { margin-bottom: 1rem; padding: 0.5rem 0.75rem; background: var(--warn-bg); border-radius: 4px; }
+.warning p { margin: 0.25rem 0; }
+.tag { display: inline-block; font-size: 0.8rem; font-weight: bold; margin-right: 0.5rem; }
+.tag-sub { font-weight: normal; color: var(--muted); }
+.warn-where { font-size: 0.875rem; color: var(--muted); }
+.no-warnings { background: var(--note-bg); padding: 0.75rem 1rem; }
+.page-footer { margin-top: 2rem; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<header class="page-header">
+  <h1>やさしい日本語プレビュー</h1>
+  <p class="meta">元の文章：直接入力した文章　／　段落 6 件　／　確認が必要なこと 3 件</p>
+  <p class="notice" role="note"><strong>公開する前に、人が内容を確認してください。</strong>この文章はAIが書き換えたもので、意味が同じであることや、読む人が理解できることを保証しません。</p>
+</header>
+<div class="toolbar" role="group" aria-label="表示する文章">
+  <span class="toolbar-label" aria-hidden="true">表示：</span>
+  <button type="button" data-mode-button="easy" aria-pressed="true">やさしい日本語</button>
+  <button type="button" data-mode-button="original" aria-pressed="false">元の日本語</button>
+</div>
+<main id="content">
+<div class="seg seg-paragraph" id="seg-s1"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">地域の 日本語教室の お知らせ</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">地域日本語教室のご案内</span></span></div>
+<div class="seg seg-paragraph has-warning" id="seg-s2"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">教室に 参加したい 人は、11月30日までに 申し込んで ください。</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">参加をご希望の方は、11月30日までにお申し込みください。</span></span> <a class="badge" href="#warn-s2">要確認</a></div>
+<ul class="seg-list">
+<li class="seg seg-list-item" id="seg-s3"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">参加する お金は いりません。</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">参加費は無料です。</span></span></li>
+<li class="seg seg-list-item has-warning" id="seg-s4"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">教科書などの お金が 500円 いる ことが あります。</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">教材費として500円が必要となる場合があります。</span></span> <a class="badge" href="#warn-s4">要確認</a></li>
+<li class="seg seg-list-item" id="seg-s5"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">申し込みの 紙は 出さなくても いいです。</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">申込書は提出しなくてもかまいません。</span></span></li>
+</ul>
+<div class="seg seg-paragraph has-warning" id="seg-s6"><span class="v v-easy"><span class="v-label">やさしい日本語：</span><span class="text">くわしい ことは https://example.org/info を 見て ください。
+質問は info@example.org に メールで 送って ください。</span></span><span class="v v-original"><span class="v-label">元の日本語：</span><span class="text">詳細は https://example.org/info をご覧ください。お問い合わせは info@example.org まで。</span></span> <a class="badge" href="#warn-s6">要確認</a></div>
+</main>
+<section class="review" aria-labelledby="review-heading">
+  <h2 id="review-heading">確認が必要なこと</h2>
+  <ol class="warnings">
+  <li class="warning" id="warn-s4"><p class="warn-head"><span class="tag">義務・可能性</span><span class="tag tag-sub">AIの指摘</span><span class="tag tag-sub">人の確認が必要</span></p><p class="warn-msg">原文は「必要となる場合があります」です。いつ必要になるか（条件）が原文に書かれていないため、条件は足していません。読む人のために条件を書くか検討してください。</p><p class="warn-where"><a href="#seg-s4">該当する文</a>：「教材費として500円が必要となる場合があります。」</p></li>
+  <li class="warning" id="warn-s6"><p class="warn-head"><span class="tag">URL・連絡先</span><span class="tag tag-sub">AIの指摘</span><span class="tag tag-sub">人の確認が必要</span></p><p class="warn-msg">原文の「お問い合わせは〜まで」を「メールで 送って ください」と書き換えました。メール以外の問い合わせ方法がないか確認してください。</p><p class="warn-where"><a href="#seg-s6">該当する文</a>：「詳細は https://example.org/info をご覧ください。お問い合わせは info@example.org まで。」</p></li>
+  <li class="warning" id="warn-s2"><p class="warn-head"><span class="tag">条件</span><span class="tag tag-sub">AIの指摘</span><span class="tag tag-sub">人の確認が必要</span></p><p class="warn-msg">申し込みの方法（どこで・どうやって）が原文に書かれていません。足していないので、必要なら原文に追加してください。</p><p class="warn-where"><a href="#seg-s2">該当する文</a>：「参加をご希望の方は、11月30日までにお申し込みください。」</p></li>
+  </ol>
+</section>
+<section class="about" aria-labelledby="about-heading">
+  <h2 id="about-heading">このプレビューについて</h2>
+  <ul>
+    <li>文章を確かめるためのページです。元のページのデザインや動きは再現しません。</li>
+    <li>出入国在留管理庁・文化庁「在留支援のためのやさしい日本語ガイドライン」を参考にしています。公式の認定や監修を受けたものではありません。</li>
+    <li>法律・医療・防災・お金に関わる文章は、とくに専門の人に確認してください。</li>
+    <li>「確認が必要なこと」に何も出ていなくても、意味が同じとは限りません。</li>
+  </ul>
+</section>
+<footer class="page-footer">
+  <p>yasashii-ja で作成：2026-11-23 11:38</p>
+</footer>
+<script>(function () {
+  var root = document.documentElement;
+  root.classList.remove("no-js");
+  var buttons = document.querySelectorAll("[data-mode-button]");
+  function setMode(mode) {
+    root.setAttribute("data-mode", mode);
+    for (var i = 0; i < buttons.length; i++) {
+      var b = buttons[i];
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-mode-button") === mode));
+    }
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function (e) {
+      setMode(e.currentTarget.getAttribute("data-mode-button"));
+    });
+  }
+  setMode("easy");
+})();</script>
+</body>
+</html>
